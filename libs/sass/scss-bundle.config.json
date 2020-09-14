@@ -1,0 +1,7 @@
+{
+  "bundlerOptions": {
+    "entryFile": "libs/sass/src/_mat-color.scss",
+    "outFile": "dist/libs/sass/mat-color.scss"
+  }
+}
+

@@ -1,0 +1,22 @@
+@function generate-mat-color($color) {
+  $palette: palette($color);
+  $colors: map-get($palette, colors);
+  $defaultIndex: map-get($palette, default);
+
+  $colorSet: ();
+  $contrast: ();
+  @for $i from 1 through length($colorKeys) {
+    $key: nth($colorKeys, $i);
+    $value: nth($colors, $i);
+    $colorSet: map-merge($colorSet, ($key: $value));
+    $contrast: map-merge($contrast, ($key: choose-contrast-color($value)));
+  }
+
+  $colorSet: map-merge($colorSet, (
+    main: nth($colorKeys, $defaultIndex),
+  ));
+
+  $colorSet: map-merge($colorSet, (contrast: $contrast));
+
+  @return $colorSet;
+}
