@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/mat-color/mat-color/issues"
   },
-  "homepage": "https://github.com/mat-color/mat-color#readme"
+  "homepage": "https://github.com/mat-color/mat-color#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
