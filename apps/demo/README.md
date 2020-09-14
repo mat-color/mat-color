@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./apps/demo/src/assets/mat-color.png" alt="Logo">
-</p>
-
 # @mat-color/sass
 
 Wherewith are you creating a material palette for an Angular Material project? Usual it doing with online tools or apps. 
