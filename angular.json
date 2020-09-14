@@ -158,7 +158,7 @@
             "tsConfig": "libs/sass/tsconfig.lib.json",
             "packageJson": "libs/sass/package.json",
             "main": "libs/sass/src/index.ts",
-            "assets": ["libs/sass/*.md"]
+            "assets": ["libs/sass/*.md", "README.md"]
           }
         },
         "sass": {

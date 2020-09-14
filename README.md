@@ -1,98 +1,53 @@
-# MatColor
+# @mat-color/sass
 
-This project was generated using [Nx](https://nx.dev).
+Wherewith are you creating a material palette for an Angular Material project? Usual it doing with online tools or apps. 
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+A custom material palette is a big sass map, and makes it manually is a tricky thing. It looks like this:
+```sass
+$primary: mat-palette(
+    (
+      50: #fffee6,
+      100: #fefbbf,
+      200: #fcf893,
+      300: #faf464,
+      400: #f6ef39,
+      500: #fff500,
+      600: #ffe100,
+      700: #ffc800,
+      800: #ffae00,
+      900: #ff8100,
+      contrast: (
+        50: rgba(0, 0, 0, 0.87),
+        100: rgba(0, 0, 0, 0.87),
+        200: rgba(0, 0, 0, 0.87),
+        300: rgba(0, 0, 0, 0.87),
+        400: rgba(0, 0, 0, 0.87),
+        500: rgba(0, 0, 0, 0.87),
+        600: rgba(0, 0, 0, 0.87),
+        700: rgba(0, 0, 0, 0.87),
+        800: rgba(0, 0, 0, 0.87),
+        900: rgba(0, 0, 0, 0.87)
+      )
+    )
+);
+```
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+But what if we could make a palette using one color in our code? It is possible because SASS can do the math!
 
-## Quick Start & Documentation
+This sass library helps you generate a material palette for use in [@angular/material](https://material.angular.io/) with one base color!
 
-[Nx Documentation](https://nx.dev/angular)
+## How it use
+1. Install package `npm i @mat-color/sass`
+2. Import `@mat-color/sass/mat-color` in your sass-file.
+3. Use the 'generate-mat-color' function.
+4. Call the 'mat-palette' function with the returned result.
+5. Enjoy!
+```sass
+@import "~@mat-color/sass/mat-color";
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
-
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
-
-## Adding capabilities to your workspace
-
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are our core plugins:
-
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
-
-## Generate an application
-
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are sharable across libraries and applications. They can be imported from `@mat-color/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+$primary: mat-palette(generate-mat-color(#b9ffaf));
+```
+### Say thanks
+<a href="https://www.buymeacoffee.com/katsuba" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" height="41" width="174" style="box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+</a>

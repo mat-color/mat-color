@@ -1,4 +1,25 @@
 {
   "name": "@mat-color/sass",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "author": {
+    "name": "Igor Katsuba",
+    "email": "katsuba.igor@gmail.com"
+  },
+  "keywords": [
+    "material",
+    "color",
+    "palette",
+    "sass",
+    "scss",
+    "angular"
+  ],
+  "description": "This sass library helps you generate a material palette for use in @angular/material with one base color!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mat-color/mat-color.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mat-color/mat-color/issues"
+  },
+  "homepage": "https://github.com/mat-color/mat-color#readme"
 }
