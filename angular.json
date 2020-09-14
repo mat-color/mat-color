@@ -21,13 +21,8 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/demo/src/favicon.ico",
-              "apps/demo/src/assets"
-            ],
-            "styles": [
-              "apps/demo/src/styles.scss"
-            ],
+            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -85,10 +80,7 @@
               "apps/demo/tsconfig.app.json",
               "apps/demo/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/demo/**/*"]
           }
         },
         "test": {
@@ -121,13 +113,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/demo-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo-e2e/**/*"
-            ]
+            "tsConfig": ["apps/demo-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-e2e/**/*"]
           }
         }
       }
@@ -149,16 +136,13 @@
                 "target": "sass:sass"
               }
             },
-            "steps": [
-              "package",
-              "sass"
-            ]
+            "steps": ["package", "sass"]
           },
           "configurations": {
             "production": {
               "targets": {
                 "package": {
-                  "target": "sass:package:production"
+                  "target": "sass:package"
                 },
                 "sass": {
                   "target": "sass:sass"
@@ -168,15 +152,13 @@
           }
         },
         "package": {
-          "builder": "@nrwl/angular:package",
+          "builder": "@nrwl/node:package",
           "options": {
+            "outputPath": "dist/libs/sass",
             "tsConfig": "libs/sass/tsconfig.lib.json",
-            "project": "libs/sass/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/sass/tsconfig.lib.prod.json"
-            }
+            "packageJson": "libs/sass/package.json",
+            "main": "libs/sass/src/index.ts",
+            "assets": ["libs/sass/*.md"]
           }
         },
         "sass": {
@@ -192,10 +174,7 @@
               "libs/sass/tsconfig.lib.json",
               "libs/sass/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/sass/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/scss/**/*"]
           }
         },
         "test": {

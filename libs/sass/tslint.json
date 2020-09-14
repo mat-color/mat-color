@@ -1,10 +1,5 @@
 {
   "extends": "../../tslint.json",
-  "rules": {
-    "directive-selector": [true, "attribute", "matColor", "camelCase"],
-    "component-selector": [true, "element", "mat-color", "kebab-case"]
-  },
-  "linterOptions": {
-    "exclude": ["!**/*"]
-  }
+  "linterOptions": { "exclude": ["!**/*"] },
+  "rules": {}
 }
